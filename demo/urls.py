@@ -12,7 +12,7 @@ urlpatterns01 = [
     path('', views.url_standard_number),  # number默认值
     path('0/', views.url_standard_fix, name='url_standard_fix'),  # 固定路径
     path('<int:number>/', views.url_standard_number),  # int型
-    path('/<uuid:uuid>/', views.url_standard_uuid),  # uuid
+    path('<uuid:uuid>/', views.url_standard_uuid),  # uuid
     path('<slug:slug>/', views.url_standard_slug),  # slug
     path('<str:str>/', views.url_standard_str),  # str
     path('<path:path>/', views.url_standard_path),  # path

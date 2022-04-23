@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['106.15.0.62']
 # Application definition
 
 INSTALLED_APPS = [
+    'demo',  # register app for modeling
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -73,12 +74,24 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# pip install mysqlclient
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'shop',
+        'HOST': '106.15.0.62',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'PORT': 3306,
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
