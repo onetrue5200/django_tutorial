@@ -1,10 +1,11 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.views import View
 
 
 def url_standard_fix(request):
-    return HttpResponse("url standard fix")
+    return HttpResponse("url standard fix!")
 
 
 def url_standard_number(request, number=-1):
@@ -37,3 +38,19 @@ def page_not_found(request, exception):
 
 def redirect(request):
     return HttpResponseRedirect(reverse('demo:url_standard_fix'))
+
+
+# Class base views
+class Class_Base_View(View):
+
+    def get(self, request):
+        return HttpResponse("cbv for get method")
+
+    def post(self, request):
+        return HttpResponse("CBV for post method")
+
+# render templates
+
+
+def index(request):
+    return render(request, "index.html")
