@@ -24,12 +24,15 @@ urlpatterns01 = [
 ]
 
 urlpatterns02 = [
-    path('cbv/', views.Class_Base_View.as_view()),
-    path('index/', views.index, name='index'),
-    path('model/<int:pk>', views.get_model),
+    # path('cbv/', views.Class_Base_View.as_view()),
+    # path('index/', views.index, name='index'),
+    # path('model/<int:pk>', views.get_model),
 ]
 
 urlpatterns = [
     # path('url/', include(urlpatterns01)),
-    path('templates/', include(urlpatterns02)),
+    # path('templates/', include(urlpatterns02)),
+    path('index/', views.index, name='index'),
+    path('login/', views.login, name='login'),
+    path('logout/', views.logout, name='logout')
 ]

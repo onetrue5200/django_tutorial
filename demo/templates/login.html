@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="{% url 'demo:login' %}" method="post">
+        {% csrf_token %}
+        <p>username: <input type="text" name="username" value="{{ username }}"></p>
+        <p>password: <input type="password" name="password" value="{{ password }}"></p>
+        <p>keep in three days<input type="checkbox" name="keep" value="keep" {% if username %}checked{% endif %}></p>
+        {% if error_msg %}<p>{{ error_msg }}</p>{% endif %}
+        <p><input type="submit" value="login"></p>
+    </form>
+</body>
+
+</html>

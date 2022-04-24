@@ -10,7 +10,8 @@
 
 <body>
     <h3>index page</h3>
-    <p>get value from key: {{ key }}</p>
+    <p>welcome {{ request.user.username }}</p>
+    <h6><a href="{% url 'demo:logout' %}">logout</a></h6>
 </body>
 
 </html>
