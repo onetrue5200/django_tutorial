@@ -2,6 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import View
+from demo.models import *
 
 
 def url_standard_fix(request):
@@ -53,4 +54,17 @@ class Class_Base_View(View):
 
 
 def index(request):
-    return render(request, "index.html")
+    context = {
+        'key': 'value',
+    }
+    return render(request, "index.html", context)
+
+
+def get_model(request, pk):
+    question = Question.objects.get(pk=pk)
+    questions = Question.objects.all()
+    context = {
+        'question': question,
+        'questions': questions,
+    }
+    return render(request, 'detail.html', context)

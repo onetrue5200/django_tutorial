@@ -9,8 +9,12 @@
 </head>
 
 <body>
-    <h3>index page</h3>
-    <p>get value from key: {{ key }}</p>
+    <h3>{{ question.title }}</h3>
+    <ul>
+        {% for t in questions %}
+        <li>{{ t.title }}</li>
+        {% endfor %}
+    </ul>
 </body>
 
 </html>
